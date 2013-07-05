@@ -19,15 +19,6 @@ h2.master-subtitle {
   margin-top: 64px;
   margin-bottom: 64px;
 }
-
-.task:hover { 
-    border-color:rgba(232, 149, 60, 0.8);
-    -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075),0 0 12px rgba(60, 149, 232, 0.8);
-	-moz-box-shadow: inset 0 2px 2px rgba(0,0,0,0.075),0 0 12px rgba(60, 149, 232, 0.8);
-	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075),0 0 12px rgba(60, 149, 232, 0.8);
-    background:#bbf;
-}
-
 .task {
   padding-top: 1em;
   background: #ddf;
