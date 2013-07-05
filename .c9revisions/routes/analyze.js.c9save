@@ -1,0 +1,4 @@
+{"ts":1372943874896,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"\n/*\n * GET home page.\n */\n\nexports.index = function(req, res){\n  res.render('index', { title: 'PRINDS' , subtitle: 'a process intelligence demonstration space'});\n};"]],"start1":0,"start2":0,"length1":0,"length2":165}]],"length":165}
+{"contributors":[],"silentsave":false,"ts":1372943927809,"patch":[[{"diffs":[[0,"exports."],[-1,"index"],[1,"analyze"],[0," = funct"]],"start1":27,"start2":27,"length1":21,"length2":23}]],"length":167,"saved":false}
+{"ts":1372943934362,"patch":[[{"diffs":[[0,"er('"],[-1,"index"],[1,"analyze"],[0,"', {"]],"start1":75,"start2":75,"length1":13,"length2":15}]],"length":169,"saved":false}
+{"ts":1372943999281,"patch":[[{"diffs":[[0,": 'a"],[-1," process intelligence demonstration space"],[1,"nalyze event data with regular expressions"],[0,"'});"]],"start1":117,"start2":117,"length1":49,"length2":50}]],"length":170,"saved":false}

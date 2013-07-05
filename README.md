@@ -1,4 +1,5 @@
-prind
+PRINDS
 =====
 
-Raw version of a process intelligence demonstration
+a process intelligence demonstration space
+
