@@ -7,13 +7,17 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , analyze = require('./routes/analyze')
-  , view = require('./routes/view')
-  , structure = require('./routes/structure')
+  , home = require('./routes/home')
+  , visualize = require('./routes/visualize')
+  , extract = require('./routes/extract')
   , http = require('http')
-  , path = require('path')
-  , mongoose = require('mongoose');
+  , path = require('path');
+  
+ 
+ //, mongoose = require('mongoose');
+  
  /*
-  mongoose.connect('mongodb://prinds:prindsmol@ds033818.mongolab.com:33818/mymongo', function() {  console.log();});
+  mongoose.connect('mongodb:///mymongo', function() {  console.log();});
   
   var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -43,25 +47,11 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
+//app.register('.html', require('jade'));
 
 app.use(require('stylus').middleware(__dirname + '/public'));
+
 //console.log(require.resolve('stylus'));
-/*
-app.configure(function () {
-  // ... your middleware here
-  app.use(stylus.middleware({
-    src: __dirname + '/views', // .styl files are located in `views/stylesheets`
-    dest: __dirname + '/public', // .styl resources are compiled `/stylesheets/*.css`
-    compile: function (str, path, fn) { // optional, but recommended
-     console.log("HALLOO");
-      stylus(str)
-      .set('filename', path)
-      .set('compress', true)
-      .render(fn);
-    }
-  }));
-});
-*/
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -71,9 +61,11 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/structure', structure.structure);
-app.get('/analyze', analyze.analyze);
-app.get('/view', view.view);
+app.get('/home/:topic', home.home);
+app.get('/extract/:topic', extract.extract);
+//app.get('/structure', structure.structure);
+app.get('/analyze/:topic', analyze.analyze);
+app.get('/visualize/:topic', visualize.visualize);
 
 app.get('/users', user.list);
 

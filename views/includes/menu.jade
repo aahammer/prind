@@ -1,0 +1,19 @@
+ul.nav.nav-list#main-menu
+    li.nav-header #{page} Menu
+    li.divider  
+    if page === 'home'
+        li#topic-overview
+            a(href='overview') Overview
+    else
+        li#topic-demonstration
+            a(href='demonstration') Demonstration
+    li
+        a(href='#') <br>
+    li#topic-technology
+        a(href='technology') Technology
+    li#topic-theory
+        a(href='theory') Theory
+
+    li.divider
+    li#topic-about
+        a(href='/home/contact') Contact

@@ -1,0 +1,42 @@
+extends ../layout
+
+block main
+
+    div.top
+        div.input-prepend.input-append.btn-group
+        
+            span.add-on Regular Expression  
+            input.span4.valid-entry#regexp(type="text", value='')
+            div.btn.add-on#run Run 
+            //-
+                div.btn-group
+                    input.add-on.input(type="text")
+                    a.add-on.btn.dropdown-toggle(data-toggle="dropdown",href="#")
+                        span.caret
+                    ul.dropdown-menu
+                        li What a  text
+    div
+            ol.unstructured-list
+                li.unstructured-line Time:1000001 Trace:T0000 Activity:A00
+                li.unstructured-line Time:1000004 Trace:T0000 Activity:A02
+                li.unstructured-line Time:1000008 Trace:T0001 Activity:A00
+                li.unstructured-line Time:1000012 Trace:T0001 Activity:A02
+                li.unstructured-line Time:1000312 Trace:T0000 Activity:A04
+                li.unstructured-line Time:1000238 Trace:T0000 Activity:A05
+                li.unstructured-line Time:1044222 Trace:T0001 Activity:A04
+                li.unstructured-line Time:1099239 Trace:T0000 Activity:A06
+                li.unstructured-line Time:1100003 Trace:T0001 Activity:A06
+                
+    div#result.hidden
+        div.input-prepend.btn-group      
+            span.add-on Result&nbsp;
+
+        ul.result
+            li Sequence A00 -> A02 -> A04 -> A05 -> A06 occures in 1 trace(s)
+            li Sequence A00 -> A02 ->A04 -> A06 occures in 1 trace(s)
+    
+        
+block info
+    include demonstration_info
+    
+    

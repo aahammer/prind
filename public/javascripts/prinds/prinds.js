@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
    $('#task-structure').click(function() {   
        console.log("ASFT");
@@ -21,7 +21,7 @@ $(document).ready(function() {
         }, 1000, function() {
             // Animation complete.
         });
-    });
+    });*/
     /*
     $(document).on("click", "ul.nav>li", function (i) {     
         $.each($(this).parent().children(), function() { 
@@ -30,9 +30,24 @@ $(document).ready(function() {
         $(this).addClass('active');
     }); */
    
-    if (current === 'home') $('#nav-home').addClass('active');
+/*    if (current === 'home') $('#nav-home').addClass('active');
     if (current === 'structure') $('#nav-structure').addClass('active');
-    
-    $(document).on("keyup", ".expression-input", structure().onKeyup); 
 
+    $(document).on("keyup", "#regexp", structure().onKeyup); 
+    $(document).on("click", "#run", structure().onRun);
+    
+    $('#regexp').keyup();*/
+   
+    
+   // $.get('/public/markdown/home.md, data, success)
+  /*  
+  
+    $("body").on({
+    ajaxStart: function() { 
+        $(this).addClass("loading"); 
+    },
+    ajaxStop: function() { 
+        $(this).removeClass("loading"); 
+    }    
+}); */
 });

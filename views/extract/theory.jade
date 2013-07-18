@@ -1,0 +1,58 @@
+extends ../layout
+
+block main
+
+    :markdown
+    
+    
+        #### Classical data sources
+        A good source for process data are the operative systems on which (sub-)process are executed.
+        This can be a hodgepodge of different heterogeneous systems or it can be an integrated business solutions like SAP.
+        Maybe you even have a dedicated Business Process Management System in control. A Business Process Management System
+        can be a great source for well-structured process data. There are many different vendors like the ones listed on [this blog from a consulting company][BPMSLIST] 
+        
+        [BPMSLIST]:http://www.counterpointconsulting.com/site/blog/entry/the-great-big-bpm-vendor-list
+
+        Beside the operative systems you can always try to find your data in your company’s data warehouse. 
+        
+        #### Minimum requirements for your data
+        Regardless of where you get your data from, it must pass a minimum requirements check to be useful for process analysis.
+        Process data events must at least include the following four properties:
+        
+        1. The data must be assignable to a process
+        2. The event must contain information about an activity
+        3. The event must contain information about a process instance or trace it belongs to
+        4. The event needs a timestamp or another order criteria 
+        
+        E.g. A customer could have purchased (activity) a bike during his shopping session (trace) at 10am (time).
+        
+        Data like the customer name or product information is very important for later analysis but not essential for producing a basic process view. What you need is an ordered sequence of activities for one or more traces
+        
+        #### Unstructured data sources
+        A major source of event data in modern business are the logging outputs of different systems. These can be collected and stored e.g. in Hadoop Filesystem for later analysis.
+        The great thing about targeting an unstructured data source: It will not get any harder. 
+        
+        For the demonstration a artificial event log was created.
+        Each log entry is an event with a timestamp, a trace indicator and an activity. The demonstration works with regular expressions which are a common
+        first step when extracting information from unstructured data. If you want to know more about the theory of information extraction
+        take a look at the paper [Information Extraction: Distilling Structured Data from Unstructured Text](http://dl.acm.org/citation.cfm?id=1105679)
+        
+        Most of the time you have more interesting attributes in your process data then just time, trace and activity and often this data is already
+        prestructured. This makes data gathering easier, but do not underestimate the complex consolidation work across different systems.
+        
+        #### Ambiguous vocabulary
+        Unfortunately most terms I use have different meaning in the relevant disciplines of Business Process Management, Business Intelligence, Data Science and Computer Science.
+        Here a short definition of the terms used on this page:
+        
+        * **Event**  
+        An event is the smallest available information unit emitted by a process. A process is the sum of all its events.   
+        E.g. a log entry from a booking system
+        * **Activity**  
+        An activity is a recognizable and repeatable task that is done as part of process execution.  
+        E.g. checking creditworthiness
+        * **Trace**   
+        A trace is the ordered collection of activities contributing to the execution of one process instance  
+        E.g. a purchasing process instance
+
+        
+         

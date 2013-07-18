@@ -1,0 +1,62 @@
+.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+.cell {
+  fill: #999;
+  stroke: #777;
+  stroke-width: 1;
+*
+}
+*
+.diagonal {
+  fill: #999;
+/* stroke:#FFF;
+  stroke-width:2; */
+  opacity: 0;
+}
+.level {
+  fill: #ddd;
+}
+.slot {
+  fill: #fff;
+  opacity: 0;
+/* stroke:#999;
+  stroke-width:1;
+  fill-opacity:0.0;*/
+}
+.nottop {
+  z-index: 89;
+}
+text {
+  font: 12px sans-serif;
+  pointer-events: none;
+/*stroke:rgb(255,255,255);
+  stroke-width:1;*/
+  fill: #000;
+}
+circle {
+  stroke: #fff;
+  stroke-width: 2;
+  fill: #999;
+}
+/*svg{display:block;height:5%;width:95%;background:#555;margin: 0 auto}*/
+svg {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 15px;
+  border-color: #999;
+  border-style: solid;
+  border-width: 0px;
+}
+#chart-0 {
+  margin-bottom: 5%;
+}
+#chart-1 {
+  margin-bottom: 30px;
+}

@@ -50,7 +50,7 @@ h4.task-bottom {
 }
 .content {
   min-height: 100%;
-  height: auto !important;
+  height: auto;
   height: 100%;
   margin-bottom: 3em;
 }

@@ -1,0 +1,33 @@
+extends ../layout
+
+block main
+
+  
+    div.disclaimer(style='float:right')
+            img(src='/images/US.png', style='margin-right:10px') 
+            a(href='disclaimer', style='margin-right:15px')  Disclaimer
+            span /
+            img(src='/images/DE.png', style='margin-right:10px;margin-left:15px') 
+            a(href='impressum') Impressum
+    
+    :markdown
+    
+    
+        #### About me
+        
+        I'm Andreas Adlichhammer. I create SAS Business Intelligence Solutions as a freelancer in Munich, Germany. 
+        I freelance part time and spend the rest of the time on learning how to produce own data applications and insights with open software solutions.
+        On the long run I hope to add some new skills to my professional portfolio.
+        
+        I am still learning and this site is my first public content. So please forgive me if it feels clumsy in some parts.
+        Drop me a line if you have tips how to improve this site or my coding.
+        
+    a(href='mailto:support@adlichhammer.de') support@adlichhammer.de  
+    
+    :markdown
+        #### My LinkedIn profile
+        
+    div#linkedin
+        script(src="//platform.linkedin.com/in.js", type="text/javascript")
+        script(type="IN/MemberProfile", data-id="http://www.linkedin.com/pub/andreas-adlichhammer/61/313/8a", data-format="inline", data-related="no")
+

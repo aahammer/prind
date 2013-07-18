@@ -1,0 +1,68 @@
+
+ol.unstructured-list { 
+    counter-reset: item;
+    list-style-type: none;
+    margin:0;
+    	padding:1em 0em;
+    text-indent: -1.2em;
+    padding-left 1.2em
+}
+
+ul.result { 
+    counter-reset: item;
+    list-style-type: none;
+    margin:0em;
+        padding:1em 0em;
+    text-indent: -1.2em;
+    padding-left 2em
+         	 
+    font: 14px courier;
+}
+
+li.unstructured-line { display: block;  
+		margin:0.1em 0; 
+		 padding:0.2em;
+		font: 14px courier;
+	}
+li.unstructured-line:before { 
+    content: counter(item) " "; 
+    counter-increment: item ;
+    color:#066;
+    font-weight:bold;
+}
+
+ul.result
+    background: #EEE;
+    
+input[type="text"].invalid-entry:focus {
+    border-color:rgba(232, 149, 60, 0.8);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(232, 149, 60, 0.8);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(232, 149, 60, 0.8);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(232, 149, 60, 0.8);
+    background #FDD
+}
+input[type="text"].valid-entry:focus {
+	border-color:rgba(60, 232, 149, 0.8);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(60, 232, 149, 0.8);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(60, 232, 149, 0.8);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(60, 232, 149, 0.8);
+    background #DFD
+}
+
+
+li.unstructured-line:nth-child(odd) { background: #EEE; }
+
+    
+::selection {
+    background: #afa;
+    color:#00F;
+}
+::-moz-selection {
+    background: #afa;
+}
+
+selection {
+	color:#000;
+	background: rgba(255,255,100,1)
+}
+

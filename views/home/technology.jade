@@ -1,0 +1,72 @@
+extends ../layout
+
+block main
+
+    a#architecture
+    :markdown
+    
+        ### Architecture Overview
+        
+        This showcase is a web application with a Node.js backend. The webserver 
+        is deployed to Heroku. For the Visualization phase major parts where developed with
+        D3.js. 
+        
+        For the extraction phase Hadoop was hosted as a Pseudo-Cluster Installation on Amazon EC2, together with
+        a Node.js TCP Server for MapReduce remote execution. 
+        
+        All code was developed with the Cloud 9 IDE and vim. Repositories are hosted on Github.
+        
+        **Repositories on Github**
+        
+        * [WebApp Repository (Frontend & Backend)](https://github.com/aahammer/prind)
+        * [Hadoop MapReduce Execution Server](https://github.com/aahammer/piglet)
+        
+        **Cloud 9 IDE Workspace**
+        
+        * [WebApp Repository (Frontend & Backend)](http://c9.io/aahammer/prind)
+        * [Hadoop MapReduce Execution Server](https://c9.io/aahammer/piglet)
+        
+    div.pagination-centered.architecture
+        p Architecture Overview
+        img(src="/images/architecture3.png")
+        
+        
+    a#wallpaper
+    :markdown
+    
+   
+    
+        ### Technology List
+        I have applied and tested several technologies throughout the project.
+        The following technologies and tools proofed to be valuable assets.
+        
+        ---
+        
+    div.pagination-centered.architecture
+        img(src="/images/wallpaper.png")
+        p
+            i Logos are property or trademarks of the companies behind the products
+    
+        
+    div.pagination-centered
+        :markdown
+            ---
+            [Apache Hadoop](http://hadoop.apache.org/)  
+            [Amazon Webservices](http://aws.amazon.com/)  
+            [Twitter Bootstrap](http://twitter.github.io/bootstrap/)  
+            [jQuery](http://jquery.com/)  
+            [Node.js](http://nodejs.org/)  
+            [Express](http://expressjs.com/)  
+            [Jade](http://jade-lang.com/)  
+            [Stylus](http://learnboost.github.io/stylus/)  
+            [Heroku](https://www.heroku.com/)  
+            [D3.js](http://d3js.org/)  
+            [Cloud 9 IDE](https://c9.io/)  
+            [GitHub](https://github.com/)  
+            [Gist](https://gist.github.com/)  
+            [Markdown](http://daringfireball.net/projects/markdown/)  
+            [Inkscape](inkscape.org/)
+
+block info
+    include technology_info
+      

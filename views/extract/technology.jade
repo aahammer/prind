@@ -1,0 +1,109 @@
+extends ../layout
+
+block main
+      
+    :markdown
+        ####  Architecture overview
+    
+        The data extraction process has four steps:encoded
+        
+        1. User Input is passed to the Webserver via AJAX
+        2. The Heroku Webserver calls a TCP Server on Amazon EC2
+        3. The TCP server resides on a Hadoop Cluster and executes
+        the MapReduce job logic
+        4. Results are passed back to the client
+        
+        The full stack was only used during development and test. The demonstration
+        works only on static results. Running the Hadoop cluster costs money ;)
+            
+            
+    div.pagination-centered.architecture
+        p Extraction Architecture - The full picture
+        img(src="/images/arch_extract.PNG")    
+      
+    h3 Major implementation steps
+    
+    a#tech1
+    :markdown
+        #### Step 1: Let the user create a regular expression in the browser
+        
+        You can enter any regular expression in the demonstration.
+        Matches are highlighted in real time in the content lines.
+        Let's take a look at the sources, the style sheets and the html to get an idea how it works.       
+           
+    div.gist-code
+        script(src="https://gist.github.com/aahammer/6018783.js?file=RegexEditor.js")
+        script(src="https://gist.github.com/aahammer/6018783.js?file=RegexEditor.css")
+        script(src="https://gist.github.com/aahammer/6018783.js?file=RegexEditor.html")
+    
+    :markdown
+        As you see, the implementation is quite simple. The key idea is to create a regular expression on each user keystroke.
+        If the regular expression throws an error the input box is highlighted red with a class switch.
+        If the regular expression is valid we just replace any match with its content enclosed in &lt;match&gt; tags.
+        
+    a(id='tech2')
+    :markdown
+        #### Step 2: Setup a Node.js TCP Server on EC2 to execute Map/Reduce jobs   
+        In order to execute MapReduce jobs on EC2 we need to setup a small TCP server.
+        Mind that the regular expression from user input is not yet used to  parameterize the jobs.
+        
+        Here is the code for the TCP Server:
+    
+    div.gist-code
+        script(src="https://gist.github.com/aahammer/6019006.js")
+    
+    :markdown
+        Its quite simple again. You just need to create a normal TCP server (lower part of the code) and pass
+        a callback function to several chained OS commands. For this example we need two MapReduce jobs.
+        
+        1. The first MapReduce job analyzes a [event log](https://github.com/aahammer/piglet/blob/master/local_test_client/process.log) similar to the one presented in the demo and produces a list.
+        This list contains all sequences including duplicates.   
+        Output example: A00->A01->A04->A06->A09
+        
+        2. The second MapReduce jobs takes the sequences and counts their occurrence over all traces.  
+        Output example: Sequence A00 -> A01 -> A06 -> A09 occurs in 4 trace(s)
+    
+        When the MapReduce jobs are done, result data are copied from HDSF and passed back to the client.
+    
+    :markdown
+        In order to run this code on a EC2 Hadoop Cluster you need to install node.js and [open a port in your EC Instance security group](http://docs.aws.amazon.com/gettingstarted/latest/wah-linux/getting-started-security-group.html)
+      
+    a(id='tech3')
+    :markdown
+        #### Execute Hadoop Map/Reduce Jobs with Hadoop Streaming API
+        
+        With the [Hadoop streaming](http://hadoop.apache.org/docs/stable/streaming.html) 
+        API you can use any language for map and reduce job logic - not just Java.
+        We will implement the MapReduce logic described in Step 2 in Node.js scripts.
+        Let's take a look at the code for analyzing events:
+        
+    div.gist-code
+        script(src="https://gist.github.com/aahammer/6019112.js?file=analyze_events.sh") 
+        script(src="https://gist.github.com/aahammer/6019112.js?file=map_event.js")  
+        script(src="https://gist.github.com/aahammer/6019112.js?file=reduce_event.js")
+    
+    :markdown
+        
+        The batch script calls Hadoop and Hadoop feeds data into the jobs over stdio.
+        
+        In the map phase a key/value pair is created for evey line. 
+        The key is the trace,  the value a JSON  time and activity object. 
+        Output of the mapscript is fed into the reducer. The reducer collects
+        all activities belonging to a trace, sorts them by time and outputs them on stdout.
+        
+        The following three code snippets show important parts of the second MapReduce phase. 
+        The second phase counts the number of times a sequence occurs.
+
+           
+        
+    div.gist-code
+        script(src="https://gist.github.com/aahammer/6019112.js?file=analyze_traces_snippet.sh") 
+        script(src="https://gist.github.com/aahammer/6019112.js?file=map_trace_snippet.js")   
+        script(src="https://gist.github.com/aahammer/6019112.js?file=reduce_trace_snippet.js")
+    
+    
+    
+        
+block info
+    include technology_info
+    

@@ -1,0 +1,71 @@
+extends ../layout
+
+block main
+   
+    :markdown
+
+        ### Architecture overview
+        
+        [D3.js](http://d3js.org/) is used to draw the data presentations. Both, the
+        standard layout structure and the Adjacency matrix display are based on
+        a single process abstraction object.
+        
+        Visualization is completely browser based, but it is easy to switch from 
+        random generator data to backend data. Just replace the JSON created by the
+        random generator  with a different JSON data source.
+        
+    div.pagination-centered.architecture
+        img(src="/images/arch_visualize.png")    
+    h3 Major implementation steps
+        
+    a#tech1
+    :markdown
+        #### Step 1: Process support classes
+            
+        First we need to implement some basic classes for managing process data
+        and for analyzing processes. Here we go:
+
+    div.gist-code
+        script(src="https://gist.github.com/aahammer/6021337.js?file=process.js")
+        script(src="https://gist.github.com/aahammer/6021337.js?file=analyze.js")
+        
+    :markdown
+    
+        The **process class** is only responsible for storing activity and connection data.
+        You create a process from a connection list. A connection list contains
+        simple source and target information {source:activity\_id, target:activity\_id}.
+        
+        The **analyze object** has only one function: hierarchy(). This function 
+        adds an depth index to each activity and flags start and end nodes. 
+        It utilizes an internal breadth first search function.
+        
+    a#tech2
+    :markdown
+        #### Step 2: Standard layout
+        
+        To be honest, d3js programs gets complex fast. The next code listing shows how
+        to create the process visualization you see in the demonstration. 
+        You can browse the code below or go to the [D3js website](http://d3js.org/) for a better introduction.
+        This [Force-Directed Graph example](http://bl.ocks.org/mbostock/4062045) applies many concepts that are used in the demo 
+        and is easier to comprehend.
+        
+    div.gist-code
+        script(src="https://gist.github.com/aahammer/6021016.js")
+    a#tech3
+    :markdown
+        #### Step 3: Adjacency layout
+        
+        And finally we add the adjaceny matrix. The matrix uses the same process object as the standard layout.
+        It also uses the same steps as the standard layout code:
+        
+        1. Enrich process data
+        2. Initialize presentation objects
+        3. Draw initial layout
+        4. Start the animation
+        
+        If you want to see more d3js adjacency matrix magic take a look at the [Les Misérables Co-occurrence example](http://bost.ocks.org/mike/miserables/)
+    div.gist-code
+        script(src="https://gist.github.com/aahammer/6021485.js")
+
+block info
+    include technology_info    

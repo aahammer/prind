@@ -1,27 +1,60 @@
 doctype 5
 html
-  head
-    title= title
-    meta(name="viewport",content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/stylesheets/prinds/prinds.css')
-    link(rel='stylesheet', href='/stylesheets/prinds/structure.css')
-    
-  bodys
-    include includes/head
+head
+     title= 'PRINDS Showroom'
+     meta(name="viewport",content="width=device-width, initial-scale=1.0")
+     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+     link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
+     link(rel='stylesheet', href='/stylesheets/prinds/main.css')
+     link(rel='stylesheet', href='/stylesheets/prinds/extract.css')
+     link(rel='stylesheet', href='/stylesheets/prinds/visualize.css')
+        //- link(rel='stylesheet', href='/stylesheets/prinds/prinds.css')
+            
+ 
+body
 
-    div.content
-        div.container
-            block content
-  
-    include includes/footer
+    div.container
     
-    script(type='text/javascript')
-        var current = '#{page}';        
-
-    script(src="/javascripts/jquery-2.0.3.js")
-    script(src="/javascripts/bootstrap.min.js")
-    script(src="/javascripts/prinds/structure.js")
-    script(src="/javascripts/prinds/prinds.js")
-   
+        div.row.navigation 
+            div.span12 
+                include includes/navigation
+        
+        div.row.header
+            div.span2
+            div.span7.title
+                include includes/header
+            div.span3
+        
+        div.row.content
+            div.span2.menu
+                include includes/menu
+            div.span7.main
+                block main
+            div.span3.info
+                block info
+       
+        div.row.prefooter 
+            div.span12 
+        div.row.footer
+            div.span12 
+                include includes/footer
+            
+        script(src="/javascripts/jquery-2.0.3.js")
+        script(src="http://d3js.org/d3.v3.min.js")
+        script(src="/javascripts/prinds/extract.js")
+        script(src="/javascripts/prinds/visualize.js")
+        script(src="/javascripts/prinds/main.js")
+         
+     //- 
+        
+         div.content
+         div.container
+         block content
+         include includes/footer
+         script(type='text/javascript')
+             var current = '#{page}';       
+        
+    
+         script(src="/javascripts/prinds/prinds.js")     
+         script(src="/javascripts/bootstrap.min.js")
+        

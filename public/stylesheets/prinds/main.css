@@ -1,0 +1,96 @@
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar-inverse .brand {
+  float: right;
+}
+.navbar-inner {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background: #eef;
+}
+.content {
+  background: #f9f9f9;
+  padding-bottom: 15px;
+}
+.gist-code {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.main,
+.info,
+.title {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.info {
+  font-size: 12px;
+  border: 0px;
+  border-left: 2px;
+  border-color: #e9e9e9;
+  border-style: solid;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.info>h4 {
+  font-size: 14px;
+}
+.preheader {
+  height: 1em;
+}
+.header {
+  background: #eef;
+}
+.title {
+  padding: 15px;
+}
+.prefooter {
+  height: 3em;
+  background: #eef;
+}
+.footer {
+  background: #eef;
+}
+.span12 {
+  width: 100%;
+}
+.navigation {
+  background: #ccc;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+a {
+  color: #66b;
+}
+#main-menu {
+  margin-top: 30px;
+}
+.nav-list>.active>a {
+  background-color: #333;
+}
+blockquote p {
+  font-size: 14px;
+  font-style: italic;
+}
+h4 {
+  margin-top: 1.5em;
+}
+.top {
+  margin-top: 30px;
+}
+h1 {
+  font-size: 48px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.architecture {
+  margin: 4em;
+}

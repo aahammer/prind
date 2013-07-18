@@ -1,0 +1,53 @@
+extends ../layout
+
+block main
+
+    :markdown
+    
+        #### Most common visualizations
+        The most simple process visualization is that of directed graph. If you work with business
+        processes you may also know one of the more bloated and complex versions of this simple 
+        variant like BPMN. The [Business Process Model Notation (BPMN)](http://en.wikipedia.org/wiki/Business_Process_Model_and_Notation) is the most common notation for business process design
+        and deserves a be included on this page:
+        
+    div.pagination-centered
+        img(src="/images/BPMN-DiscussionCycle.jpg")
+        i
+            p Picture from 
+                a(href='http://commons.wikimedia.org/wiki/Main_Page') Wikimedia Commons
+        
+        
+    :markdown
+        
+        
+        #### Alternative structure visualization methods
+        
+        An example for an alternative visualization method is a Design Structure Matrix, which is better at displaying the overall
+        structure of a process in regard of dependency. The Adjacency matrix on the demo page is such a Design Structure Matrix.
+        If you search for Design Structure Matrix on Wikipedia there is hint:
+        > It is the equivalent of an adjacency matrix in graph theory
+        
+        That’s a great hint! In essence every visualization method that is applicable on directed graphs is also applicable on 
+        process data. For some ideas of how directed graphs can be visualized take a look at 
+        [Google picture search](https://www.google.com/search?q=directed+graph+visualization&tbm=isch)
+        
+        Other structure visualization methods often need constrained process data. Just think about what kind of processes
+        you can visualize as a [Kanban Board].
+      
+        #### Event visualization
+        The next layer of process visualization makes use of event data. You can visualize your event data separately, like with [event tunnels](http://www.win.tue.nl/bpi2012/lib/exe/fetch.php?media=molka.pdf),
+        or you can combine your event data and your structure data for more sophisticated visualizations. 
+        
+        Take a look at these product presentation videos from [Fluxion](http://fluxicon.com/) to get an impression of what can be done with a combination
+        of structural and event based data:
+
+        * [Process Animation with Disco](http://www.youtube.com/watch?v=LfwDgahq71c)
+        * [Process Variants - Process Mining TV](http://www.youtube.com/watch?v=WrLK7KTHgIo)
+        
+        Event data is discrete by default. If you interpolate the different data points you can also apply time series visualization
+        on your process data.
+            
+        #### In a nutshell
+        There are two major components for visualizing a process 
+        – the static structure component and the dynamic event component. 
+        Both are needed in combination for high value visual analysis.

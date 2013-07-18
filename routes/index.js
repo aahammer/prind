@@ -4,5 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { page:'home', title: 'PRINDS' , subtitle: 'a process intelligence demonstration space'});
+
+ res.redirect('home/overview');
+  //res.render('home/overview', { page:'home', topic:'overview', title: 'PRINDS' , subtitle: 'a process intelligence demonstration space'});
 };

@@ -1,0 +1,29 @@
+:markdown
+    ####What is this all about ?
+    In this demo you can enter regular expressions to structure event data lines.
+    When you hit "Run" the regular expression is passed to a Hadoop Cluster
+    where map/reduce jobs are executed on the data to count the frequency of different
+    activity sequences.   
+    
+    *For the online demonstration the Hadoop connection is not active.
+    But you can [take a look at the different code steps of the full version](technology#tech1)*
+    
+
+    ####Demonstration Elements
+    
+    **Regular Expression**  
+    Enter any regular expression. Hits in the example event data table are 
+    highlighted. If the regular expression is incomplete the input box will be glow red.
+    
+    **Event data table**   
+    The table shows nine example events. Each event contains a time, trace and activity field.
+    If you want to know more about time, trace and activity take a look in the [extraction theory](theory)
+    
+    **Run**  
+    If you run the demonstration, the regular expression is used to structure the data into
+    time, trace and activity events by match group. The Run command counts the occurrence of different
+    sequences and presents the results.
+    *In this demonstration Run will only work for the regular expression \w+:(\w+) . 
+    
+    **Result**  
+    The frequency of different sequences in the data.
