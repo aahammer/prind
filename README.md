@@ -9,8 +9,8 @@ Applied technologies include Hadoop and Webtechnologies. You can find Hadoop par
 
 Some Screens
 ============
-Process visualization using d3.js:
+Process visualization using d3.js
 ![prinds-process-visualization](https://media.giphy.com/media/1AHVf5jaRAo0KKXtuA/giphy.gif)
 
-Selfwritten Regexp Webeditor that searched traces containing results on Hadoop:
+Selfwritten Regexp Webeditor that searched traces containing results on Hadoop
 ![prinds-trace-finder](https://media.giphy.com/media/wHrkydPsxQR1aomHBh/giphy.gif)
