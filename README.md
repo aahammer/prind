@@ -5,7 +5,7 @@ Repository of a small tech demo project that was planned to become my entry into
 
 For details see [PRINDS Website](http://prinds.herokuapp.com/)
 
-Applied technologies include Hadoop and Webtechnologies. You can find Hadoop parts in the [Piglet Git Repo]https://github.com/aahammer/piglet
+Applied technologies include Hadoop and Webtechnologies. You can find Hadoop parts in the [Piglet Git Repo](https://github.com/aahammer/piglet)
 
 Some Screens
 ============
